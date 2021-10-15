@@ -1,0 +1,24 @@
+<form [formGroup]="options" (ngSubmit)="send()" >
+<mat-radio-group aria-label="Select an option">
+  <mat-radio-button value="1">enviar notificaciones</mat-radio-button>
+</mat-radio-group>
+
+<mat-form-field class="example-full-width">
+  <input type="text" formControlName="para" matInput placeholder="Para"/>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input type="text" formControlName="copia" matInput placeholder="Copia"/>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input type="text" formControlName="cc" matInput placeholder="CC"/>
+</mat-form-field>
+<mat-form-field class="example-full-width">
+  <input type="text" formControlName="asunto" matInput placeholder="Asunto"/>
+</mat-form-field>       
+
+<mat-form-field class="example-full-width">
+  <textarea type="text" formControlName="cuerpo" matInput placeholder="Cuerpo"></textarea>
+</mat-form-field>
+<button mat-raised-button color="primary" type="submit">Grabar</button>
+<button mat-raised-button color="accent" type="button" (click)="cancelar()">Cancelar</button>
+</form>

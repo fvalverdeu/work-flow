@@ -1,0 +1,11 @@
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    width: 50%;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+button {
+    width: 200px;
+}

@@ -1,0 +1,79 @@
+<div style="text-align:center">
+  <h1>
+      Welcome to {{ title }}!
+  </h1>
+  <template #messagecontainer>
+  </template>
+</div>
+
+<mat-tab-group>
+  <mat-tab label="Datos Generales" >    
+    <app-datos-generales></app-datos-generales>      
+  </mat-tab>
+  <mat-tab label="Actores">
+    <app-actores></app-actores>
+  </mat-tab>
+  <mat-tab label="Tiempos">
+    <app-Tiempos></app-Tiempos>
+  </mat-tab>
+  <mat-tab label="Notificaciones">
+    <app-notificaciones></app-notificaciones>
+  </mat-tab>
+</mat-tab-group>
+
+
+
+<header>
+  <h2>Detalle</h2>
+
+  <div class="github-link"><a href="https://github.com/jerosoler/Drawflow" target="_blank"><i class="fab fa-github fa-3x"></i></a></div>
+  <div class="them-edit-link"><a href="https://jerosoler.github.io/drawflow-theme-generator/" target="_blank">🎨</a></div>
+</header>
+<div class="wrapper">
+  <div class="col">
+      <div class="menu">
+          <ul>
+              <li onclick="editor.changeModule('Home'); changeModule(event);" class="selected">Nodos</li>
+            
+          </ul>
+      </div>
+      <div class="col-body">
+    
+          <div class="drag-drawflow" draggable="true" (dragstart)="drag($event)" data-node="slack">
+              <i class="fab fa-slack"></i><span> End</span>
+          </div>
+
+          <div class="drag-drawflow" draggable="true" (dragstart)="drag($event)" data-node="dbclick">
+              <i class="fas fa-mouse"></i><span> Task</span>
+          </div>
+          <div class="drag-drawflow" draggable="true" (dragstart)="drag($event)" data-node="name_connection_line">
+              <i class="fas fa-mouse"></i><span> Name Connetor</span>
+          </div>
+
+      </div>
+  </div>
+  <div class="col-right">
+      <div class="menu">
+          <ul>
+              <li onclick="editor.changeModule('Home'); changeModule(event);" class="selected">Home</li>
+           
+          </ul>
+      </div>
+      <div id="drawflow" #drawflow (drop)="drop($event)" (dragover)="allowDrop($event)">
+
+          <div class="btn-export" onclick="Swal.fire({ title: 'Export',
+               html: '<pre><code>' +JSON.stringify(editor.export(), null,4)+'</code></pre>'
+                })">Grabar</div>
+          <div class="btn-clear" onclick="editor.clearModuleSelected()">Clear</div>
+          <div class="btn-lock">
+              <i id="lock" class="fas fa-lock" onclick="editor.editor_mode='fixed'; changeMode('lock');"></i>
+              <i id="unlock" class="fas fa-lock-open" onclick="editor.editor_mode='edit'; changeMode('unlock');" style="display:none;"></i>
+          </div>
+          <div class="bar-zoom">
+              <i class="fas fa-search-minus" onclick="editor.zoom_out()"></i>
+              <i class="fas fa-search" onclick="editor.zoom_reset()"></i>
+              <i class="fas fa-search-plus" onclick="editor.zoom_in()"></i>
+          </div>
+      </div>
+  </div>
+</div>
