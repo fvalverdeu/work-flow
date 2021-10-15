@@ -1,0 +1,36 @@
+<div class="grid">
+    <div class="col p-field-checkbox">
+        <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary"></p-checkbox>
+        <label class="label-chk" for="binary">Inicial</label>
+    </div>
+    
+    <div class="col p-field-checkbox">
+        <p-checkbox [(ngModel)]="checked" [binary]="true" inputId="binary"></p-checkbox>
+        <label class="label-chk" for="binary">Final</label>
+    </div>
+</div>
+<br>
+<div class="grid">
+    <div class="col">
+        <span class="p-float-label">
+            <input id="float-input-nombre" type="text" pInputText [(ngModel)]="name"> 
+            <label for="float-input-nombre">Nombre</label>
+        </span>
+    </div>
+    
+    <div class="col">
+        <span class="p-float-label">
+            <input id="float-input-estado" type="text" pInputText [(ngModel)]="state"> 
+            <label for="float-input-estado">Estado</label>
+        </span>
+    </div>
+</div>
+<br>
+<div class="grid">
+    <div class="col">
+        <span class="p-float-label">
+            <textarea id="float-input-descripcion" rows="3" cols="60" pInputTextarea [(ngModel)]="description"></textarea>
+            <label for="float-input-descripcion">Descripcion</label>
+        </span>
+    </div>
+</div>

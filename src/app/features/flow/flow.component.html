@@ -1,0 +1,12 @@
+<app-tarea (isClick)="showModalOptions($event)"></app-tarea>
+
+<p-dialog [(visible)]="displayModal" [modal]="true" [style]="{width: '50vw'}"
+    [draggable]="false" [resizable]="false">
+    <ng-template pTemplate="header">
+        <app-tarea-opciones></app-tarea-opciones>
+    </ng-template>
+    <router-outlet></router-outlet>
+    <ng-template pTemplate="footer">
+        <p-button icon="pi pi-check" (click)="displayModal=false" label="Ok" styleClass="p-button-text"></p-button>
+    </ng-template>
+</p-dialog>
